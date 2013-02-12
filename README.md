@@ -1,4 +1,4 @@
 ablogcms-plugin
 ===============
 
-a-blog cmsno
+a-blog cmsの機能を拡張するための機能群です。
