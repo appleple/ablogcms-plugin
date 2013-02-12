@@ -1,0 +1,18 @@
+## Yahooウェブ検索
+api_yahoo_web_search_type     : all
+api_yahoo_web_search_limit      : 10
+api_yahoo_web_search_adult      : 0
+api_yahoo_web_search_similar    : 0
+api_yahoo_web_search_lang     : 
+api_yahoo_web_search_country    : 
+api_yahoo_web_search_pager_delta  : 3
+api_yahoo_web_search_pager_cur_attr : ' class="cur"'
+api_yahoo_web_search_base_url   : 'http://search.yahooapis.jp/WebSearchServicePro/V1/webSearch'
+
+## Yahooイメージ検索
+api_yahoo_image_search_type       : all
+api_yahoo_image_search_limit      : 10
+api_yahoo_image_search_adult      : 0
+api_yahoo_image_search_pager_delta    : 3
+api_yahoo_image_search_pager_cur_attr : ' class="cur"'
+api_yahoo_image_search_base_url     : 'http://search.yahooapis.jp/ImageSearchServicePro/V1/imageSearch'

@@ -1,0 +1,76 @@
+<h1><!-- BEGIN_MODULE Admin_Rule_Name -->
+	<strong>ルール : {name} の</strong><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+	<strong>モジュールID : {label} ( {identifier} ) の</strong><!-- END_MODULE Admin_Module_Name -->コンフィグ管理
+</h1>
+<!--#include file="/admin/topicpath.html"-->
+<!-- BEGIN_MODULE Admin_Config -->
+<div class="titleWrapper">
+	<h2>Yahooイメージ検索 ( Api_Yahoo_ImageSearch )</h2><!-- BEGIN_MODULE Touch_SessionWithAdministration -->
+	<a href="{shortcutUrl}" class="shortcutBtn">ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
+</div>
+	<div class="contents">
+	<!--<p class="infoTxt">エントリーのサマリーを表示するモジュールを設定します。</p>-->
+	<form action="../" method="post">
+
+		<h3>コンフィグ</h3>
+		<table class="adminTable adminTableY">
+			<tr>
+				<th>検索タイプ<img src="/images/tooltip.gif" alt="ヘルプ" width="12" height="12" id="tooltip-apiYahooImageSearchType" class="tooltipIcon" /></th>
+				<td>
+					<select name="api_yahoo_image_search_type">
+						<option value="all"{api_yahoo_image_search_type:selected#all}>全キーワードを含む ( all )</option>
+						<option value="any"{api_yahoo_image_search_type:selected#any}>キーワードの中のいずれかを含む ( any )</option>
+						<option value="phrase"{api_yahoo_image_search_type:selected#phrase}>キーワードを文章として含む ( phrase )</option>
+					</select>
+					<input type="hidden" name="config[]" value="api_yahoo_image_search_type" />
+				</td>
+			</tr>
+			<tr>
+				<th>表示件数<img src="/images/tooltip.gif" alt="ヘルプ" width="12" height="12" id="tooltip-apiYahooImageSearchLimit" class="tooltipIcon" /></th>
+				<td>
+					<input type="text" name="api_yahoo_image_search_limit" value="{api_yahoo_image_search_limit}" size="4" /> ( 上限20件 )
+					<input type="hidden" name="config[]" value="api_yahoo_image_search_limit" />
+					<input type="hidden" name="api_yahoo_image_search_limit:convert" value="a" />
+					<input type="hidden" name="api_yahoo_image_search_limit:validator#digits" id="validator-api_yahoo_image_search_limit-digits" />
+					<label for="validator-api_yahoo_image_search_limit-digits" class="validator-result-{api_yahoo_image_search_limit:validator#digits}">数字を入力して下さい。</label>
+					<input type="hidden" name="api_yahoo_image_search_limit:validator#max" id="validator-api_yahoo_image_search_limit-max" value="20" />
+					<label for="validator-api_yahoo_image_search_limit-max" class="validator-result-{api_yahoo_image_search_limit:validator#max}">上限を超えています</label>
+				</td>
+			</tr>
+			<tr>
+				<th>前後に表示するページ数<img src="/images/tooltip.gif" alt="ヘルプ" width="12" height="12" id="tooltip-apiYahooImageSearchPagerDelta" class="tooltipIcon" /></th>
+				<td>
+					<input type="text" name="api_yahoo_image_search_pager_delta" value="{api_yahoo_image_search_pager_delta}" size="4" />
+					<input type="hidden" name="config[]" value="api_yahoo_image_search_pager_delta" />
+					<input type="hidden" name="api_yahoo_image_search_pager_delta:validator#digits" id="validator-api_yahoo_image_search_pager_delta-digits" />
+					<label for="validator-api_yahoo_image_search_pager_delta-digits" class="validator-result-{api_yahoo_image_search_pager_delta:validator#digits}">数字を入力してください。</label>
+				</td>
+			</tr>
+			<tr>
+				<th>現在のページの要素の属性<img src="/images/tooltip.gif" alt="ヘルプ" width="12" height="12" id="tooltip-apiYahooImageSearchPagerCurAttr" class="tooltipIcon" /></th>
+				<td>
+					<input type="text" name="api_yahoo_image_search_pager_cur_attr" value="{api_yahoo_image_search_pager_cur_attr}" size="20" />
+					<input type="hidden" name="config[]" value="api_yahoo_image_search_pager_cur_attr" />
+				</td>
+			</tr>
+            <tr>
+                <th>リクエストURL<img src="/images/tooltip.gif" alt="ヘルプ" width="12" height="12" id="tooltip-apiYahooImageSearchBaseUrl" class="tooltipIcon" /></th>
+                <td>
+                    <input type="text" name="api_yahoo_image_search_base_url" value="{api_yahoo_image_search_base_url}" size="80" />
+                    <input type="hidden" name="config[]" value="api_yahoo_image_search_base_url" />
+                </td>
+            </tr>
+		</table><!-- BEGIN_MODULE Admin_Rule_Name -->
+		<input type="hidden" name="rid" value="{rid}" /><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+		<input type="hidden" name="mid" value="{mid}" /><!-- END_MODULE Admin_Module_Name -->
+
+		<table class="adminTable">
+			<tr>
+				<td class="systemBtn">
+					<input type="submit" name="ACMS_POST_Config" value="保存" />
+				</td>
+			</tr>
+		</table>
+	</form>
+</div><!-- END_MODULE Admin_Config -->
+<!--#include file="/admin/tooltip/config/api/yahoo/image-search.html"-->
